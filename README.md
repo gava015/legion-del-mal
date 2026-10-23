@@ -15,7 +15,13 @@ Somos la alianza definitiva de supervillanos. Mientras los héroes se dividen en
 📁 guaridas/        → Ubicaciones y estado de nuestras bases
 📁 inteligencia/    → Expedientes de los héroes enemigos
 📄 misiones.yaml    → Estado global de todas las misiones
+<<<<<<< Updated upstream
 📄 nuevas misiones.yaml    → Estado global de todas las nuevas misiones
+=======
+>>>>>>> Stashed changes
+📄 misiones.yaml    → Estado global de todas las misiones
+    README.md       -> Documentacion principal del repositorio
+
 
 ```
 
@@ -27,6 +33,7 @@ Somos la alianza definitiva de supervillanos. Mientras los héroes se dividen en
 | 🥈 Segundo al mando       | Magneto    | Estratega militar y reclutamiento de mutantes           |
 | 🥉 Jefa de infiltración   | Mystique   | Espionaje, identidades falsas y operaciones encubiertas |
 | ⚙️ Director de tecnología | Brainiac   | Sistemas, armamento y recopilación de datos             |
+vvvS
 
 ## Miembros activos (campo)
 

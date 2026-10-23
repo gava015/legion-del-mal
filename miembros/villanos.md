@@ -6,8 +6,10 @@
 4.Joker
 5.Harley Quinn
 6.Darkseid
+7.DeathStroke
+
 
 
 #Notas
 
-Esto es un archivo de ejemplo que contiene una lista de villanos conocidos en en el universo de DC
+Esto es un archivo de ejemplo que contiene una lista de villanos conocidos en en el universo de 
