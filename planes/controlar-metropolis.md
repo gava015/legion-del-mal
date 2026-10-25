@@ -6,3 +6,4 @@ El objetivo es congelar la ciudad de Metropolis para detener el tiempo
 
 1. **preparación del equipo
 2. **Identificación de áreas críticas 
+3. **Seleccionar areas mas criticas
