@@ -1,5 +1,5 @@
 ![Con logo](https://img.shields.io/badge/Git-2.45-F05032?style=for-the-badge&logo=git&logoColor=white)
-![Estático](https://img.shields.io/badge/Legion--del--mal-Activa-red)
+![Estático](https://img.shields.io/badge/Legion--del--mal-última--versión-red)
 
 ![Workflow](https://img.shields.io/github/actions/workflow/status/gava015/legion-del-mal/ci.yml)
 ![Release](https://img.shields.io/github/v/release/gava015/legion-del-mal)
