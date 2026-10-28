@@ -6,7 +6,7 @@
 ![Issues](https://img.shields.io/github/issues/gava015/legion-del-mal)
 ![Último commit](https://img.shields.io/github/last-commit/gava015/legion-del-mal)
 ![Licencia](https://img.shields.io/github/license/gava015/legion-del-mal?cacheSeconds=60)
-<<<<<<< HEAD
+
 # 🦹‍♂️ La Legión del Mal - Desde remoto y local
 
 
