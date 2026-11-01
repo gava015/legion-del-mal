@@ -7,7 +7,7 @@
 ![Último commit](https://img.shields.io/github/last-commit/gava015/legion-del-mal)
 ![Licencia](https://img.shields.io/github/license/gava015/legion-del-mal?cacheSeconds=60)
 
-# 🦹‍♂️ La Legión del Mal 
+# 🦹‍♂️ La Legión del Mal - desde local
 
 
 > _"El mundo no se conquista con fuerza bruta, se conquista con un buen plan y control de versiones."_
