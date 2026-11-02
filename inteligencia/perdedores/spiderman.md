@@ -17,3 +17,13 @@ Spiderman es un superhéroe de Marvel Comics. Su identidad más conocida es Pete
 - Sensores	Algunos trajes detectan amenazas y monitorean el entorno.
 
 
+## Peliculas
+
+Spider-Man (2002)
+
+Spider-Man 2 (2004)
+
+Spider-Man 3 (2007)
+
+
+
