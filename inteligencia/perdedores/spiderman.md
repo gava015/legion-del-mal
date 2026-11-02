@@ -10,3 +10,10 @@ Spiderman es un superhéroe de Marvel Comics. Su identidad más conocida es Pete
 - El Hombre de Arena.
 - Electro.
 
+## Traje 
+- Habilidad	Descripción
+- Protección	Protege al usuario de golpes, rasguños y ciertos - - - - - impactos.
+- Lanzatelarañas	Permite disparar telarañas para atrapar enemigos y - - desplazarse.
+- Sensores	Algunos trajes detectan amenazas y monitorean el entorno.
+
+
