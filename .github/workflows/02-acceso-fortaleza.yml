@@ -1,7 +1,8 @@
 name: Acceso a la fortaleza prohibida
 
 on:
-  push:
+  #push:
+  workflow_dispatch:
 
 jobs:
   acceso-a-la-base:
@@ -14,3 +15,20 @@ jobs:
           echo "Buscar los archivos de la legion"
           ls  -la
           echo "x pero qué pasó?, no hay nada"
+
+      - name: 'Brianiac desbloquea la bóveda'
+        uses: actions/checkoutQv4
+
+      - name: 'Ahora si vamos a ver los planes'
+        run: |
+          echo "Buscar los archivos de la Legión"
+          ls -la
+          echo " Funciona !!!"
+          echo ""
+          echo "Planes:"
+          ls planes/
+          echo "Villanos"
+          ls villanos/
+          echo "Inteligencia:"
+          ls inteligencia/
+
