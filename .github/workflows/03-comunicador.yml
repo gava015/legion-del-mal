@@ -1,6 +1,5 @@
 name: Comunicador de la legión
 
-
 on:
   workflow_dispatch:
     inputs:
@@ -14,7 +13,20 @@ on:
           - Joker
           - Mystique
           - Brainiac
+      mensaje: 
+          description: 'Mensaje para el consejo'
+          required: true
+          default: 'La misión fue un éxito'
 
+      prioridad:
+        descripcion: 'Nivel de prioridad'
+        required: true
+        type: choice
+        options:
+          - Normal
+          - Alta
+          - Crítica
+         
 
 jobs:
   transmitir-mensaje:
