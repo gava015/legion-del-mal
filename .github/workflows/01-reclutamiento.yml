@@ -1,6 +1,7 @@
 name: Reclutamiento de agente
 
-on: push
+on:
+  push:
 
 jobs:
   reporte-de-reclutamiento:
