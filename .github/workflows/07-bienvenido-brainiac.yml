@@ -1,7 +1,7 @@
 name: Bienvenida de Brainiac - Nuevo issue
 on:
-  issues:
-    types: [opened]
+ # issues:
+ #   types: [opened]
 
 permissions:
   issues: write
@@ -9,7 +9,7 @@ permissions:
 jobs:
   responder-issue:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Brainiac confirma la revisión
         uses: actions/github-script@v7
@@ -23,3 +23,22 @@ jobs:
               issue_number: numero,
               body: `Hola @${autor}, Brainiac confirma que tu issue está siendo revisado. Te responderemos en cuanto tengamos novedades. 🤖`
             });
+
+      - name: Enviar aviso por correo a Valen
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.MAIL_SERVER }}
+          server_port: ${{ secrets.MAIL_PORT }}
+          secure: true
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: "Brainiac está revisando un nuevo issue: #${{ github.event.issue.number }}"
+          to: valen@google.com
+          from: ${{ secrets.MAIL_FROM }}
+          body: |
+            Brainiac recibió un nuevo issue y lo está revisando.
+
+            Repositorio: ${{ github.repository }}
+            Issue #${{ github.event.issue.number }}: ${{ github.event.issue.title }}
+            Creado por: ${{ github.event.issue.user.login }}
+            Enlace: ${{ github.event.issue.html_url }}
