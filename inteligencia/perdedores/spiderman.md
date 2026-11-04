@@ -27,3 +27,6 @@ Spider-Man 3 (2007)
 
 
 
+## Estrategia recomendada
+
+- modificar el traje para mejorarlo
