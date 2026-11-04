@@ -1,10 +1,11 @@
+
 name: Comunicador de la legión
 
 on:
   workflow_dispatch:
     inputs:
       villano:
-        descripcion: '¿Qué villano envía el mensaje?'
+        description: '¿Qué villano envía el mensaje?'
         required: true
         type: choice
         options:
@@ -13,35 +14,30 @@ on:
           - Joker
           - Mystique
           - Brainiac
-      mensaje: 
-          description: 'Mensaje para el consejo'
-          required: true
-          default: 'La misión fue un éxito'
+
+      mensaje:
+        description: 'Mensaje para el consejo'
+        required: true
+        default: 'La misión fue un éxito'
 
       prioridad:
-        descripcion: 'Nivel de prioridad'
+        description: 'Nivel de prioridad'
         required: true
         type: choice
         options:
           - Normal
           - Alta
           - Crítica
-         
 
 jobs:
   transmitir-mensaje:
-      runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-      steps:
-       - name: Imprimir inputs
-         run:
-            echo "Inputs: "
-            echo ""
-            echo "Villano: ${{ inputs.villano }}"
-            echo "Nivel: ${{ inputs prioridad }}"
-            echo "Mensaje: ${{ inpus.mensaje }}"
-
-
-
-
-    
+    steps:
+      - name: Imprimir inputs
+        run: |
+          echo "Inputs:"
+          echo ""
+          echo "Villano: ${{ inputs.villano }}"
+          echo "Nivel: ${{ inputs.prioridad }}"
+          echo "Mensaje: ${{ inputs.mensaje }}"
