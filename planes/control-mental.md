@@ -8,5 +8,6 @@ Planes de control mental que se puede usar en el juego.
 3. Registrar el uso del plan
 
 ## Plan de escape
+
 - Ir al helipuerto y marcar la señal
 
