@@ -1,0 +1,69 @@
+name: Crear release desde tag
+
+on:
+  push:
+    tags:
+      - 'V*'
+
+permissions:
+  contents: write
+
+jobs:
+  crear-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener historial y tags
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Preparar registro de commits
+        id: commits
+        shell: bash
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          PREVIOUS_TAG="$(git describe --tags --abbrev=0 "${TAG}^" 2>/dev/null || true)"
+
+          if [[ -n "$PREVIOUS_TAG" ]]; then
+            LOG="$(git log --format='- `%h` %s — %an' "${PREVIOUS_TAG}..${TAG}")"
+          else
+            LOG="$(git log --format='- `%h` %s — %an' "$TAG")"
+          fi
+
+          if [[ -z "$LOG" ]]; then
+            LOG="No hay commits nuevos que listar para esta versión."
+          fi
+
+          DELIMITER="COMMIT_LOG_${GITHUB_RUN_ID}_${GITHUB_RUN_ATTEMPT}"
+          {
+            echo "log<<${DELIMITER}"
+            echo "$LOG"
+            echo "$DELIMITER"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Crear release con cambios y logs
+        uses: actions/github-script@v7
+        env:
+          COMMIT_LOG: ${{ steps.commits.outputs.log }}
+        with:
+          script: |
+            const tag = context.ref.replace('refs/tags/', '');
+            const { data: notes } = await github.rest.repos.generateReleaseNotes({
+              ...context.repo,
+              tag_name: tag
+            });
+
+            const body = `${notes.body || 'No se generaron notas automáticas.'}
+
+            ## Registro de commits
+
+            ${process.env.COMMIT_LOG}`;
+
+            await github.rest.repos.createRelease({
+              ...context.repo,
+              tag_name: tag,
+              name: tag,
+              body,
+              draft: false,
+              prerelease: /(?:alpha|beta|rc)/i.test(tag)
+            });
